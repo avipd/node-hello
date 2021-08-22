@@ -20,7 +20,7 @@ pipeline {
 
     stage('Push Docker Image') {
       steps {
-        withDockerRegistry(credentialsId: 'docker-hub-cred', url: '\'https://registry.hub.docker.com\'') {
+        withDockerRegistry(credentialsId: 'docker-hub-cred', url: 'https://index.docker.io/v1/') {
           sh '''docker tag node-helow:$BUILD_ID aviperets/node-hello:$BUILD_ID && docker push aviperets/node-hello:$BUILD_ID '''
     
         
