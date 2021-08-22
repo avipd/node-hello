@@ -18,5 +18,13 @@ pipeline {
       }
     }
 
+    stage('Push Docker Image') {
+      steps {
+        sh '''#docker login
+#docker tag node-helow:$BUILD_ID aviperets/node-hello:$BUILD_ID
+#&& docker push aviperets/node-hello:$BUILD_ID '''
+      }
+    }
+
   }
 }
